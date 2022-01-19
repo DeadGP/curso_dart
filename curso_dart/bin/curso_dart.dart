@@ -136,20 +136,40 @@
 //     "email": "test_user_14057075@testuser.com"
 // }
 
-main() {
-  Map familia = {'papa': 'Alejandro', 'mama': 'Maria', 'hijo': 'Jose'};
-  print(familia);
-  print('Las llaves son: ${familia.keys}');
-  print('Los valores son: ${familia.values}');
-  print('El padre es: ${familia['papa']}');
-  print('La madre es: ${familia['mama']}');
+// main() {
+//   Map familia = {'papa': 'Alejandro', 'mama': 'Maria', 'hijo': 'Jose'};
+//   print(familia);
+//   print('Las llaves son: ${familia.keys}');
+//   print('Los valores son: ${familia.values}');
+//   print('El padre es: ${familia['papa']}');
+//   print('La madre es: ${familia['mama']}');
 
-  familia.putIfAbsent(1, () => 'Hola');
-  print(familia);
-  familia.putIfAbsent('hermano', () => 'Francisco');
-  print('El nombre del hermano es: ${familia['hermano']}');
-  print('Lo que contiene la llave 1 es: ${familia[1]}');
+//   familia.putIfAbsent(1, () => 'Hola');
+//   print(familia);
+//   familia.putIfAbsent('hermano', () => 'Francisco');
+//   print('El nombre del hermano es: ${familia['hermano']}');
+//   print('Lo que contiene la llave 1 es: ${familia[1]}');
 
-  familia.remove(1);
-  print(familia);
-}
+//   familia.remove(1);
+//   print(familia);
+// }
+
+//Control de Flujo
+// 3.1 Assert.
+
+// 3.2 Estructura if-else.
+
+// 3.3 Scope de las variables.
+
+// 3.4 Estructura switch.
+
+// 3.5 Estructuras repetitivas.
+// 3.5.1 Do-while.
+
+// 3.5.2 While.
+
+// 3.5.3 Ciclo infinito.
+
+// 3.5.4 Ciclo for.
+
+// 3.5.5 Ciclo for-each.
