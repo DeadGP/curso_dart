@@ -436,3 +436,17 @@ import 'dart:io';
 //     print(object);
 //   });
 // }
+
+// Funciones
+// 4.1 Funciones básicas.
+
+// 4.2 Parámetros opcionales.
+
+// 4.3 Sobrecarga de funciones.
+
+// 4.4 Parámetros nombrados.
+
+// 4.5 Funciones como objeto.
+
+// 4.6 Funciones anónimas.
+
