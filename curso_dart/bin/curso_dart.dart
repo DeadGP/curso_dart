@@ -746,34 +746,3 @@ import 'dart:io';
 
 //Clases
 
-import 'package:pdf/pdf.dart';
-import 'package:pdf/widgets.dart' as pw;
-
-main() async {
-  dynamic pdf = pw.Document();
-
-  print('Ingresa el texto por favor: ');
-  String? text = stdin.readLineSync();
-
-  pdf.addPage(pw.Page(
-      pageFormat: PdfPageFormat.a4,
-      build: (pw.Context context) {
-        return pw.Column(children: <pw.Widget>[
-          pw.Center(child: pw.Text('Hola esto es una prueba')),
-          pw.Text('Hola',
-              style: pw.TextStyle(
-                color: PdfColors.amber,
-              )),
-          pw.Row(children: <pw.Widget>[
-            pw.Center(child: pw.Text('$text')),
-            pw.Text('Hola',
-                style: pw.TextStyle(
-                  color: PdfColors.amber,
-                )),
-          ])
-        ]);
-      }));
-
-  dynamic file = File('Ejemplo.pdf');
-  await file.writeAsBytes(await pdf.save());
-}
