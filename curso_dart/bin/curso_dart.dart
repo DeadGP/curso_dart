@@ -177,6 +177,8 @@
 //   print('Final después del assert');
 // }
 
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 // 3.2 Estructura if-else.
 import 'dart:io';
 
@@ -439,14 +441,295 @@ import 'dart:io';
 
 // Funciones
 // 4.1 Funciones básicas.
+// main() {
+//   prueba();
+//   prueba2();
+//   print('La función suma ${suma()}');
+//   _saludo('Alejandro');
+//   print('Tú edad es: ${calcularEdad(2022, 1998)}');
+//   print(
+//       'Tú edad es desde la función flecha: ${calcularEdadFlecha(2022, 1998)}');
+
+//   print(factorial(10));
+// }
+
+// double factorial(numero) {
+//   if (numero <= 0) {
+//     return 1;
+//   } else {
+//     return (numero * factorial(numero - 1));
+//   }
+// }
+
+// int calcularEdadFlecha(int aact, int anac) => aact - anac;
+
+// calcularEdad(int aact, int anac) {
+//   return aact - anac;
+// }
+
+// prueba2() {
+//   print('Hola desde la función tipo dinámica');
+// }
+
+// void prueba() {
+//   print('Hola desde la función tipo void');
+// }
+
+// int suma() {
+//   return 2 + 5;
+// }
+
+// void _saludo(String nombre) {
+//   print('Hola $nombre');
+// }
 
 // 4.2 Parámetros opcionales.
+// main() {
+//   dynamic num1, num2, nombre;
+
+//   print('Ingresa tu nombre: ');
+//   nombre = stdin.readLineSync();
+//   saludo(nombre);
+//   // saludo('Alejandro');
+//   print('Ingresa el primer número: ');
+//   num1 = stdin.readLineSync();
+//   print('Ingresa el segundo número: ');
+//   num2 = stdin.readLineSync();
+//   suma(int.parse(num1), int.parse(num2));
+//   // suma(8, 10);
+// }
+
+// void saludo([String nombre = 'Sin nombre']) {
+//   print('Hola $nombre');
+// }
+
+// suma([int num1 = 3, int num2 = 5]) {
+//   var sum = num1 + num2;
+//   print('El resultado es $sum');
+// }
 
 // 4.3 Sobrecarga de funciones.
+// main() {
+//   int valor1 = 5, valor2 = 10;
+
+//   print('${valor1} al cuadrado es =  ${calculadora(5)}');
+
+//   print('${valor1} + ${valor2} = ${calculadora(5, 10)}');
+// }
+
+// calculadora(int num1, [int? num2]) {
+//   if (num2 == null) {
+//     return num1 * num1;
+//   } else {
+//     return num1 + num2;
+//   }
+// }
 
 // 4.4 Parámetros nombrados.
+// main() {
+//   // int area = areaCuadrada(lado1: 5, lado2: 10);
+//   // print('El área es: $area');
+
+//   imprimirNombre('Alejandro', 'Mora', segundoNombre: 'Espiritu');
+// }
+
+// imprimirNombre(String nombre, String apellido, {String segundoNombre = ""}) {
+//   print('$nombre $segundoNombre $apellido');
+// }
+
+// areaCuadrada({int? lado1, int? lado2}) {
+//   return lado1! * lado2!;
+// }
+
+// main() {
+//   print('El área con párametro nombrado es: ${areaRectangulo(5, lado2: 10)}');
+//   print('El área con un solo argumento es: ${areaRectangulo(5)}');
+// }
+
+// areaRectangulo(int lado1, {int lado2 = 2}) {
+//   return lado1 * lado2;
+// }
 
 // 4.5 Funciones como objeto.
+// main() {
+//   var edadHombre = calcularEdad;
+//   var edadMujer = calcularEdad;
+//   print('La edad del hombre es: ${edadHombre(aact: 2022, anac: 1998)}');
+//   print('La edad de la mujer es: ${edadMujer(aact: 2022, anac: 1999)}');
+// }
+
+// int calcularEdad({int? aact, int? anac}) {
+//   return aact! - anac!;
+// }
 
 // 4.6 Funciones anónimas.
+// main() {
+//   var saborHelados = ['chocolate', 'vainilla', 'fresa'];
+//   saborHelados.forEach((item) {
+//     print('Tenemos el sabor $item');
+//   });
+// }
+
+// main() {
+//   List persona = ['Hugo', 'Luis', 'Paco'];
+//   persona.forEach(print);
+
+//   persona.forEach((nombre) {
+//     print(nombre);
+//   });
+
+//   print('---------------');
+
+//   persona.where((nombre) {
+//     switch (nombre) {
+//       case 'Hugo':
+//         return true;
+//       case 'Luis':
+//         return false;
+//       case 'Paco':
+//         return true;
+//     }
+//     return nombre;
+//   }).forEach(print);
+// }
+
+// dynamic opcion, num1, num2, resultado;
+// main() {
+//   calculadora();
+// }
+
+// calculadora() {
+//   print('''Elige una opción:
+//   1.- Suma
+//   2.- Resta
+//   3.- División
+//   4.- Multiplicación''');
+
+//   opcion = stdin.readLineSync();
+
+//   switch (opcion) {
+//     case '1':
+//       suma();
+//       break;
+//     case '2':
+//       resta();
+//       break;
+//     case '3':
+//       division();
+//       break;
+//     case '4':
+//       multiplicacion();
+//       break;
+//     default:
+//       print('Esta opción no existe, elige de nuevo');
+//       calculadora();
+//       break;
+//   }
+// }
+
+// suma() {
+//   print('Bienvenido a suma!');
+//   print('Ingresa el primer número: ');
+//   num1 = stdin.readLineSync();
+
+//   print('Ingresa el segundo número: ');
+//   num2 = stdin.readLineSync();
+//   resultado = double.parse(num1) + double.parse(num2);
+
+//   print('El resultado de la suma es: $resultado');
+
+//   desicion2();
+// }
+
+// resta() {
+//   print('Bienvenido a resta!!');
+//   print('Ingrese el primer número: ');
+//   num1 = stdin.readLineSync();
+//   print('Ingrese el segundo número');
+//   num2 = stdin.readLineSync();
+
+//   resultado = double.parse(num1) - double.parse(num2);
+
+//   print('El resultado de la resta es: $resultado');
+
+//   desicion2();
+// }
+
+// division() {
+//   print('Bienvenido a división!!');
+//   print('Ingrese el primer número: ');
+//   num1 = stdin.readLineSync();
+//   print('Ingrese el segundo número: ');
+//   num2 = stdin.readLineSync();
+
+//   resultado = double.parse(num1) / double.parse(num2);
+
+//   print('El resultado de la división es: $resultado');
+
+//   desicion2();
+// }
+
+// multiplicacion() {
+//   print('Bienvenido a multiplicación!!');
+//   print('Ingrese el primer número: ');
+//   num1 = stdin.readLineSync();
+//   print('Ingrese el segundo número');
+//   num2 = stdin.readLineSync();
+
+//   resultado = double.parse(num1) * double.parse(num2);
+
+//   print('El resultado de la multiplicación es: $resultado');
+
+//   desicion2();
+// }
+
+// desicion(opcion) {
+//   if (opcion == 'Si' || opcion == 'si') {
+//     calculadora();
+//   } else if (opcion == 'No' || opcion == 'no') {
+//     print('Gracias por usar nuestra calculadora!!');
+//   } else {
+//     print('La opción $opcion no existe');
+//   }
+// }
+
+// desicion2() {
+//   print('¿Desea realizar otra operación? Si/No');
+//   opcion = stdin.readLineSync();
+
+//   if (opcion == 'Si' ||
+//       opcion == 'si' ||
+//       opcion == 'SI' ||
+//       opcion == 'sI' ||
+//       opcion == 's' ||
+//       opcion == 'S') {
+//     calculadora();
+//   } else if (opcion == 'No' ||
+//       opcion == 'no' ||
+//       opcion == 'NO' ||
+//       opcion == 'nO' ||
+//       opcion == 'n' ||
+//       opcion == 'N') {
+//     print('Gracias por usar nuestra calculadora!!');
+//   } else {
+//     print('La opción $opcion no existe');
+//     desicion2();
+//   }
+// }
+
+// import 'package:pdf/pdf.dart';
+// import 'package:pdf/widgets.dart' as pw;
+
+// main() async {
+//   dynamic pdf = pw.Document();
+
+//   pdf.addPage(pw.Page(
+//       pageFormat: PdfPageFormat.a4,
+//       build: (pw.Context context) {
+//         return pw.Center(child: pw.Text('Hola Mundo'));
+//       }));
+
+//   dynamic file = File('Ejemplo.pdf');
+//   await file.writeAsBytes(await pdf.save());
+// }
 
