@@ -182,6 +182,8 @@
 // 3.2 Estructura if-else.
 import 'dart:io';
 
+import 'package:curso_dart/calculadora.dart';
+
 // main() {
 //   // int edad;
 
@@ -745,3 +747,8 @@ import 'dart:io';
 // 5.5 Imports.
 
 //Clases
+
+main() {
+  Calculadora calculadora = Calculadora();
+  calculadora.calculadora();
+}
