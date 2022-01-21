@@ -177,7 +177,7 @@
 //   print('Final después del assert');
 // }
 
-// ignore_for_file: unnecessary_brace_in_string_interps
+// ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_null_comparison
 
 // 3.2 Estructura if-else.
 import 'dart:io';
@@ -733,3 +733,47 @@ import 'dart:io';
 //   await file.writeAsBytes(await pdf.save());
 // }
 
+// Manejo de errores
+// 5.1 Excepciones.
+
+// 5.2 Sentencia try-catch-finally.
+
+// 5.3 Capturando el error especifico.
+
+// 5.4 Throwing exceptions.
+
+// 5.5 Imports.
+
+//Clases
+
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+
+main() async {
+  dynamic pdf = pw.Document();
+
+  print('Ingresa el texto por favor: ');
+  String? text = stdin.readLineSync();
+
+  pdf.addPage(pw.Page(
+      pageFormat: PdfPageFormat.a4,
+      build: (pw.Context context) {
+        return pw.Column(children: <pw.Widget>[
+          pw.Center(child: pw.Text('Hola esto es una prueba')),
+          pw.Text('Hola',
+              style: pw.TextStyle(
+                color: PdfColors.amber,
+              )),
+          pw.Row(children: <pw.Widget>[
+            pw.Center(child: pw.Text('$text')),
+            pw.Text('Hola',
+                style: pw.TextStyle(
+                  color: PdfColors.amber,
+                )),
+          ])
+        ]);
+      }));
+
+  dynamic file = File('Ejemplo.pdf');
+  await file.writeAsBytes(await pdf.save());
+}
