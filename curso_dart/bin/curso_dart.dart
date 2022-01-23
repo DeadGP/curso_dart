@@ -735,13 +735,244 @@ import 'dart:io';
 
 // Manejo de errores
 // 5.1 Excepciones.
+// main() {
+//   int? num1, num2 = 2;
+
+//   print(num1! * num2);
+// }
 
 // 5.2 Sentencia try-catch-finally.
+// main() {
+//   int? num1, num2 = 10;
+//   // try {
+//   //   print(num1! * num2);
+//   // } catch (e) {
+//   //   print('Existe un error ${e.toString()}');
+//   // } finally {
+//   //   print('Programa terminado');
+//   // }
 
+//   try {
+//     var result = 100 ~/ 0;
+//     print('El resultado es: $result');
+//   } catch (e) {
+//     print(e.toString());
+//   } finally {
+//     print('Programa terminado');
+//   }
+// }
 // 5.3 Capturando el error especifico.
+// main() {
+//   try {
+//     var result = 100 ~/ 0;
+//     print(result);
+//   } on IntegerDivisionByZeroException {
+//     print('Esto no se esperaba');
+//   } catch (e) {
+//     print(e.toString());
+//   } finally {
+//     print('Programa terminado');
+//   }
+// }
 
 // 5.4 Throwing exceptions.
 
+// main() {
+//   try {
+//     int? num1, num2;
+//     if (num1 == null) {
+//       throw NullThrownError();
+//     }
+//     print(num1 * num2!);
+//   } catch (e) {
+//     print(e.toString());
+//   } finally {
+//     print('Programa terminado');
+//   }
+// }
+
+// main(List<String> args) {
+//   try {
+//     int? num1, num2 = 0;
+
+//     // if (num2 == 0) {
+//     //   throw Exception('Debe ser mayor a 0');
+//     // }
+
+//     if (num1 == null) {
+//       throw NullThrownError();
+//     }
+
+//     print(num1 * num2);
+//   } catch (e) {
+//     print(e.toString());
+//   } finally {
+//     print('Programa terminado');
+//   }
+// }
+
 // 5.5 Imports.
 
+import 'package:curso_dart/curso_dart.dart' as curso_dart;
+import 'package:curso_dart/imports.dart';
+import 'package:http/http.dart' as http;
+
+// main() {
+//   print('El resultado del calculo es: ${curso_dart.calculate(2, 5, 4)}');
+// }
+
+// main() {
+//   dynamic api = fetchPost();
+//   print(api.toString());
+// }
+
+// Future<String> fetchPost() async {
+//   String url = 'https://jsonplaceholder.typicode.com/posts/1';
+
+//   final api = Uri.parse(url);
+
+//   final response =
+//       await http.get(api, headers: {"content-type": "applicaction/json"});
+
+//   String responseString = response.body;
+
+//   if (response.statusCode == 200) {
+//     print(responseString);
+//     print('Funciono');
+//   } else {
+//     print('Ocurrio un error: ${response.statusCode}');
+//   }
+
+//   return responseString;
+// }
+
 //Clases
+// main() {
+//   final auto1 = Coche('Honda', 'SFH-242');
+
+//   print(auto1);
+//   print(auto1.marca);
+//   print(auto1.placa);
+//   print(auto1);
+// }
+
+// class Coche {
+//   late String marca, placa;
+
+//   Coche(this.marca, this.placa);
+
+//   @override
+//   String toString() {
+//     return '${this.marca} - ${this.placa}';
+//   }
+// }
+
+// main() {
+//   MiClase claseSaludo = MiClase();
+
+//   claseSaludo.saludo('Alejandro');
+// }
+
+// class MiClase {
+//   saludo(String nombre) => print('Hola $nombre');
+// }
+
+// main() {
+//   final wolverine = Heroes(nombre: 'logan', poder: 'Regeneración');
+//   print(wolverine);
+//   print(wolverine.nombre);
+//   print(wolverine.poder);
+// }
+
+// main(List<String> args) {
+//   Chofer chofer = Chofer();
+
+//   chofer.id = 1;
+//   chofer.name = 'Alex';
+//   chofer.salario = 10;
+//   chofer.vehiculoAsignado = 'Toyota';
+//   chofer.calcularSalario();
+//   chofer.manejar();
+// }
+
+// main() {
+//   final superman = Heroe();
+//   superman.nombre = 'Clark Kent';
+
+//   final luthor = Villano();
+//   luthor.nombre = 'Lex Luthor';
+
+//   print(superman.nombre);
+//   print(luthor.nombre);
+// }
+
+// main(List<String> args) {
+//   final varAutomovil = Automovil();
+//   final varAvion = Avion();
+
+//   varAutomovil.caracteristicas();
+//   varAvion.caracteristicas();
+// }
+
+// main() {
+//   final perro = Perro();
+
+//   perro.emitirSonido();
+
+//   final gato = Gato();
+
+//   gato.emitirSonido();
+// }
+
+// main() {
+//   Animal perro = Perro();
+//   Animal gato = Gato();
+
+//   perro.emitirSonido();
+//   gato.emitirSonido();
+// }
+
+// main() {
+//   Calculadora calculadora = Calculadora();
+
+//   calculadora.calculadora();
+// }
+
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+
+main() async {
+  dynamic pdf = pw.Document();
+
+  print('Ingresa el nombre deseado para tu archivo: ');
+  var nombre = stdin.readLineSync();
+
+  pdf.addPage(pw.Page(
+      pageFormat: PdfPageFormat.a4,
+      build: (pw.Context context) {
+        return pw.Column(children: <pw.Widget>[
+          pw.Center(child: pw.Text('Hola Mundo')),
+          pw.Text('Hola', style: pw.TextStyle(color: PdfColors.blue500)),
+          pw.Row(children: <pw.Widget>[
+            pw.Center(child: pw.Text('Hola')),
+            pw.Text('Hola en amarillo',
+                style: pw.TextStyle(color: PdfColors.amber))
+          ])
+        ]);
+      }));
+  pdf.addPage(pw.Page(
+      pageFormat: PdfPageFormat.a4,
+      build: (pw.Context context) {
+        return pw.Column(children: <pw.Widget>[
+          pw.Center(child: pw.Text('Hola Mundo')),
+          pw.Text('Hola', style: pw.TextStyle(color: PdfColors.blue500)),
+          pw.Row(children: <pw.Widget>[
+            pw.Center(child: pw.Text('Hola')),
+            pw.Text('$nombre', style: pw.TextStyle(color: PdfColors.amber))
+          ])
+        ]);
+      }));
+
+  dynamic file = File('$nombre.pdf');
+  await file.writeAsBytes(await pdf.save());
+}
